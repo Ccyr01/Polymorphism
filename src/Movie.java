@@ -9,7 +9,8 @@ public class Movie {
         System.out.println(title + " is a "+instanceType+" film");
     }
     //pre: movie type and title
-    //post:returns mo
+    //post:returns movie which gets assigned type of movie:
+    //      which allows access to those specific methods
     public static Movie getMovie(String type, String title){
         return switch (type.toUpperCase().charAt(0)){
             case 'A' -> new Adventure(title);
@@ -32,6 +33,9 @@ class Adventure extends Movie{
                 "Scary Music",
                 "Something Bad Happens");
     }
+    public void watchAdventure(){
+        System.out.println("Watching an Adventure! ");
+    }
 }
 
 class Comedy extends Movie{
@@ -47,6 +51,9 @@ class Comedy extends Movie{
                 "Something even funnier happens",
                 "Happy Ending");
     }
+    public void watchComedy(){
+        System.out.println("Watching a Comedy! ");
+    }
 
 }
 class ScienceFiction extends Movie{
@@ -61,6 +68,9 @@ class ScienceFiction extends Movie{
                 "Bad Aliens do bad stuff",
                 "Space guys chase aliens ",
                 "Planet blows up");
+    }
+    public void watchScienceFiction(){
+        System.out.println("Watching a Science Fiction! ");
     }
 }
 
